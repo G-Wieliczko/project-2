@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker')
+$fonts: 'Verdana', sans-serif
+$white-project: #fff
+$back-color: #313234
+$textColor: #000
+$featured: #2A2C2B
+$backgroundDescription: #838584
+$myFooter: #292a2b
+$my: #00C7E8
+
+.width-ex
+	width: 200px
+	height: 200px
+	border-radius: 50%
+	
+//*grid*//
+* 
+	box-sizing: border-box
+
+
+.row:before, 
+.row:after 
+	content: ""
+	display: table
+	clear: both
+
+
+[class*="col-"] 
+	float: left
+	min-height: 1px
+
+@for $i from 1 through 12
+	.col-#{$i} 
+		width: 100% / 12 * $i
+
+@for $i from 1 through 12
+	.col-offset-#{$i}
+		margin-left: 100% / 12 * $i
+
+//* header *//
+.container 
+	max-width: 1200px
+	margin: 0 auto
+	width: 100%
+		
+header 
+	background-color: lighten( $back-color, 10%)
+	height: 50px
+	font-family: $fonts
+	nav 
+		clear: both
+		ul 
+			margin: 0 auto
+			padding: 0
+			list-style-type: none
+			float: right
+			li 
+				display: inline-block
+				a 
+					line-height: 50px
+					display: block
+					padding: 0 20px
+					color: $white-project
+					text-decoration: none
+					text-transform: uppercase
+					&:hover
+						background-color: lighten( $back-color, 30%)
+						color: $my
+		img 
+			padding: 10px
+
+
+//* hero*//
+.hero 
+	width: 100%
+	height: 600px
+	background-image: url("http://st.gde-fon.com/wallpapers_original/657732_groningen_groningen_niderlandyi_noch_ogni_2048x1152_www.Gde-Fon.com.jpg")
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	background-attachment: fixed
+	.slogan 
+		max-width: 700px
+		background-color: rgba(0, 0, 0, 0.7)
+		float: right
+		text-transform: uppercase
+		margin-top: 140px
+		height: 240px
+		text-shadow: 2px 2px 5px $textColor
+		h1 
+			padding: 50px 0
+			color: $white-project
+			font-weight: 500
+			font-size: 42px
+			text-transform: uppercase
+			font-family: sans-serif
+			text-align: center
+	.circle-btn 
+		text-align: center
+		padding: 0 auto
+		.fa 
+			margin: 10px
+			font-size: 25px
+			color: lighten( $back-color, 30%)
+			padding-top: 170px
+			&:hover 
+				cursor: pointer
+				color: $white-project
+
+//*icons*//
+section
+	.container 
+		margin: 50px auto
+		text-align: center
+		header 
+			.row 
+				height: 400px
+	.icons,
+	.icons a 
+		text-align: center
+		font-family: $fonts
+		color: $textColor
+		text-decoration: none
+		font-size: 50px
+		padding-top: 100px
+		&:hover
+			color: $my
+		h2 
+			font-size: 20px
+			text-transform: uppercase
+			font-weight: 600
+			margin-top: 20px
+			font-family: $fonts
+		p 
+			font-size: 16px
+			margin-top: 20px
+			font-weight: 100
+			font-family: $fonts
+
+.featured 
+	width: 100%
+	height: 200px
+	text-align: center
+	margin-top: 70px
+	font-family: $fonts
+	h2 
+		font-size: 32px
+		font-weight: 700
+		color: $featured
+	p 	
+		font-size: 16px
+		padding: 30px 0
+		color: $featured
+
+
+//* gallery *//
+.gallery [class*="col-"] 
+	float: left
+	
+.gallery 
+	width: 100%
+	position: relative
+	.photos 
+		position: relative
+		display: inline-block
+		
+	.fa 
+		text-align: center
+		opacity: 1
+		font-size: 30px
+		color: $white-project
+	.image 
+		width: 100%
+		height: 150px
+		background-size: auto
+		float: left
+		object-fit: cover
+	
+	
+.layer 
+	position: absolute
+	width: 100%
+	height: 100%
+	text-align: center
+	opacity: 0
+	transition: .3s
+	padding-top: 70px
+	font-size: 30px
+	color: $white-project
+	&:hover
+		background-color: rgba(0, 0, 0, 0.5)
+		cursor: pointer
+		opacity: 1
+		display: inline-block
+
+
+//*team*//
+.team [class*="col-"] 
+	position: relative
+	
+.team 
+	max-width: 100%
+	height: 300px
+	img 
+		@extend .width-ex
+	.layer 
+		@extend .width-ex
+		position: absolute
+		display: inline-block
+	h3 
+		font-size: 18px
+		padding-top: 15px
+		font-weight: 600
+		color: $backgroundDescription
+
+
+//* description *//
+.description 
+	width: 100%
+	background-color: $backgroundDescription
+	.tablet 
+		float: left
+		display: inline-block
+		img 
+			padding: 40px 10px
+			width: 100%
+			height: 50%
+			display: flex
+		h2 
+			color: $white-project
+			font-size: 32px
+			font-weight: 700
+			font-family: $fonts
+			padding: 30px 0 10px
+			p 
+				color: $white-project
+				font-size: 16px
+				font-family: $fonts
+				text-align: left
+				overflow: visible
+				margin: 20px
+		.specification 
+			display: inline-block
+
+
+//* numbers *//
+.numbers 
+	width: 100%
+	padding: 20px 0
+	h2 
+		font-size: 50px
+		font-family: 'Permanent Marker', fantasy, cursive
+		color: $featured
+	p 
+		padding-top: 10px
+		font-size: 20px
+		font-family: $fonts
+		text-transform: uppercase
+		color: $my
+
+
+//* footer *//
+.footer 
+	width: 100%
+	font-family: $fonts
+	background-color: $myFooter
+	color: $white-project
+	padding: 20px 0
+	font-size: 14px
+	.about 
+		margin-right: 30px
+		float: right
+		text-align: justify
+	h2 
+		font-weight: 700
+		float: left
+		text-transform: uppercase
+		margin-bottom: 20px
+		position: relative
+	h2:before 
+		content: ""
+		display: block
+		width: 50px
+		height: 2px
+		position: absolute
+		bottom: 8px
+		right: -70px
+		background-color: $white-project
+
+
+.inside h3 
+	float: left
+	font-weight: 600
+	text-align: left
+	display: flex
+
+
+.inside-2 p 
+	float: left
+	display: block
+	margin: 10px 30px
+	text-align: justify
+	padding-left: 10px
+
+
+.social-media .fa 
+	float: left
+	background-color: $my
+	width: 40px
+	height: 40px
+	text-align: center
+	margin: 5px
+	padding-top: 15px
+	margin-top: 10px
+	cursor: pointer
+
+
+//* copyrights*//
+.copyright 
+	width: 100%
+	height: 60px
+	font-size: 16px
+	text-align: center
+	color: $white-project
+	background-color: $textColor
+	display: block
+	font-family: $fonts
+	padding-top: 20px
+
+//* respnsive *//
+@media (max-width: 767px) 
+	[class*="col-"] 
+		width: 100%
+		padding: 12px
+		float: left
+	
+
+	//* For tablets: *//
+	@for $i from 1 through 12
+		.col-s-#{$i} 
+			width: 100% / 12 * $i
+	
+	header 
+		height: 100%
+		nav 
+			text-align: center
+			ul 
+				float: none
+				li 
+					display: block
+		
+	
+	.gallery .layer 
+		opacity: 1
+		background: transparent
+	
+
+	.team 
+		height: 100%
+		.layer 
+			opacity: 0
+			background: transparent
+	
+	
+	.numbers 
+		padding-top: 0
+	
+	
+	.touch > p 
+		padding-left: 30px
+	
+	
+
+@media all and (min-width: 768px) and (max-width: 1199px) 
+	//* For desktop: *//
+	@for $i from 1 through 12
+		.col-m-#{$i} 
+			width: 100% / 12 * $i
+
+	.gallery .layer 
+		opacity: 1
+		background: transparent
+	
+	
+	.team 
+		height: 100%
+		.photos 
+			margin-bottom: 20px
+			.layer 
+				opacity: 0
+				background: transparent
+	
+	
+	.tablet img 
+		width: 300px
+		margin: 0 auto
+		float: none
+	
+	
+	
+	.footer
+		h3 
+			padding: 10px 10px
+		h2
+			padding: 10px 10px
+		
+		
+	.touch > p 
+		padding-left: 20px
+	
+	
+	.inside-2 p 
+		margin: 10px 30px
+	
+	
+	.footer 
+		h2 
+			font-size: 20px
+		.about 
+			margin: 10px 10px
+			
+			
